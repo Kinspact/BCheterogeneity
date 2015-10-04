@@ -1,0 +1,8 @@
+exportPattern("^[[:alpha:]]+")
+importFrom("stats", "coefficients", "predict")
+importFrom("utils", "data")
+import(
+  pls,
+  quadprog,
+  randomForest
+)
