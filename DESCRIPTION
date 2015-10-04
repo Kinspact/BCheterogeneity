@@ -3,7 +3,7 @@ Type: Package
 Title: Breast cancer heterogeneity evaluation
 Version: 1.0
 Date: 2015-10-01
-Author: Wen Yanhua and Song Li
+Author: Yanhua Wen and Song Li
 Maintainer: Yanhua Wen <lovingtengfei@126.com>
 Description: Using methylation values to identify heterogeneity of breast tumors.
 License: What license is it under?
