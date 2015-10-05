@@ -4,5 +4,5 @@ of 2320 cell-type specific genes obtained from Infinium HumanMethylation450 Bead
 further classified these samples into 9 subclusters according to their cell component and proportion.
 #Install
     install.packages("devtools")  # depends R (≥ 3.0.2)
-    library(devtools)
+    library(devtools) # please download and install Rtools 
     install_github("Kinspact/BCheterogeneity")
