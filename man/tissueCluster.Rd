@@ -1,24 +1,23 @@
 \name{tissueCluster}
 \alias{tissueCluster}
-%- Also NEED an '\alias' for EACH other topic documented here.
 \title{
 Breast Tissue Classification
 }
 \description{
-This function can give the probabilities of one given sample belonging to the nine clusters by using RandomForest.
+This function can obtain the probabilities of the given sample belonging to the nine clusters defined by consensus clustering
+using RandomForest.
 }
 \usage{
 tissueCluster(component, type = "response")
 }
-%- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{component}{the content of each cell-line component in one sample}
+  \item{component}{the content of each cell-line component in one sample, the result from the function ccPredict}
   \item{type}{one of "response", "prob" or "vote", default value is "response"}
 }
 \details{
-At first, consensus clustering method was performed by using ConcensusClusterPlus package in R to determine subgroups of breast tumors 
-based on the cell component of samples. 672 TCGA samples were divided into nine clusters. Then, using the the RandomForest R package
-to evaluate the subcluster of the given samples.
+Consensus clustering method was performed by using ConcensusClusterPlus package in R to determine subgroups of breast tumors 
+based on the cell component of samples. 672 TCGA samples were divided into nine clusters with different clinical characterristic.
+We infer the subcluster of the given breast sample based on random forest algorithm.
 }
 \value{
 This function will return a cluster with the greatest probability.
@@ -26,11 +25,11 @@ This function will return a cluster with the greatest probability.
 
 \seealso{
 	\code{\link{ccPredict}},
-	\code{\link{extractMethy}}
+	\code{\link{extractMethy}},
+	\code{\link{BCheterogeneity}}
 }
 \examples{
-## tissuecg represents the cg methylation values in two breast tissues.
-# data(tissuecg)
-## return methylation values of the feature genes in two breast tissues 
-# result <- extractMethy(tissuecg)
+# result1 <- ccPredict(tissuegene)
+# result2 <- tissueCluster(result1)
+# result3 <- tissueCluster(result1, type="prob")
 }
